@@ -13,7 +13,7 @@ try {
 
     $Admin->Save();
     $Conn->Commit();
-    header('location:viewadmin.php?Id='.$Admin->get_Id());
+    header('location:admin.php');
 }catch (Exception $e) {
    include('../error_handler.php');
 }

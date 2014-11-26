@@ -13,7 +13,7 @@ $ClaimType->Name = $_POST['Name'];
 
    $ClaimType->Save();
    $Conn->Commit();
-    header('location:viewclaimtype.php?Id='.$ClaimType->get_Id());
+    header('location:claimtype.php');
 } catch (Exception $e) {
    include('../error_handler.php');
 }

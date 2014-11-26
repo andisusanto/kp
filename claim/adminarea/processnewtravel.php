@@ -14,7 +14,7 @@ $Travel->Name = $_POST['Name'];
 
    $Travel->Save();
    $Conn->Commit();
-    header('location:viewtravel.php?Id='.$Travel->get_Id());
+    header('location:travel.php');
 } catch (Exception $e) {
    include('../error_handler.php');
 }

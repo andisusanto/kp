@@ -16,7 +16,7 @@ $Employee->ChangePasswordOnLogIn = ($_POST['ChangePasswordOnLogIn'] == 'on') ? 1
 
    $Employee->Save();
    $Conn->Commit();
-    header('location:viewemployee.php?Id='.$Employee->get_Id());
+    header('location:employee.php');
 } catch (Exception $e) {
    include('../error_handler.php');
 }
