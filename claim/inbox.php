@@ -26,7 +26,7 @@ $employeeInboxs = EmployeeInbox::LoadCollection($Conn,'Employee = '.$_SESSION['C
                         <td><?php if($employeeInbox->IsRead) { echo $employeeInbox->Subject;} else {?> <b> <?php echo $employeeInbox->Subject;?></b> <?php } ?></td>
                         <td><?php echo $employeeInbox->Message; ?></td>
                         <td><?php echo date('Y-M-d',$employeeInbox->ReceivedDate); ?></td>
-                        <td><a href="inboxdetail.php?Id=<?php echo $employeeInbox->get_Id(); ?>">View</a></td>
+                        <td><a href="processopeninbox.php?Id=<?php echo $employeeInbox->get_Id(); ?>">View</a></td>
                     </tr>
                 <?php
             }

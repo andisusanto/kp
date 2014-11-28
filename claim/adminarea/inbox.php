@@ -26,7 +26,7 @@ $adminInboxs = AdminInbox::LoadCollection($Conn,'1=1','ReceivedDate DESC');
                         <td><?php if($adminInbox->IsRead) { echo $adminInbox->Subject;} else {?> <b> <?php echo $adminInbox->Subject;?></b> <?php } ?></td>
                         <td><?php echo $adminInbox->Message; ?></td>
                         <td><?php echo date('Y-M-d',$adminInbox->ReceivedDate); ?></td>
-                        <td><a href="inboxdetail.php?Id=<?php echo $adminInbox->get_Id(); ?>">View</a></td>
+                        <td><a href="processopeninbox.php?Id=<?php echo $adminInbox->get_Id(); ?>">View</a></td>
                     </tr>
                 <?php
             }

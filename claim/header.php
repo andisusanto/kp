@@ -32,8 +32,8 @@
           <li><a href="logout.php">log out</a></li>
           <li><a href="newclaim.php">new claim</a></li>
           <li><a href="myclaimhistory.php">history</a></li>
-
-          <li><a href="inbox.php">inbox<?php $count = count(EmployeeInbox::LoadCollection($Conn,"Employee = ".$_SESSION['CurrentEmployeeId']." AND IsRead = 0")); if($count > 0) echo "(".$count.")"; ?></a></li>
+            <?php $count = count(EmployeeInbox::LoadCollection($Conn,"Employee = ".$_SESSION['CurrentEmployeeId']." AND IsRead = 0"));?>
+          <li><a href="inbox.php"><?php echo ($count > 0) ? "<b>inbox(".$count.")</b>" : "inbox" ; ?></a></li>
       </ul>
 
     </div>

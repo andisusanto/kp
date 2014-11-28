@@ -12,11 +12,6 @@ $adminInbox = AdminInbox::GetObjectByKey($Conn,$_GET['Id']);
     <div>Message : <?php echo $adminInbox->Message; ?></div>
     <div><a href="<?php echo $adminInbox->ViewDetailLink; ?>">View</a></div>
 </div>
-<?php 
-    $adminInbox->IsRead = 1;
-    $adminInbox->Update();
-    $Conn->Commit();
-?>
 <?php
     include('footer.php');
 ?>

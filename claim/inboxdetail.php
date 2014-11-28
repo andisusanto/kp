@@ -13,11 +13,6 @@ $employeeInbox = EmployeeInbox::GetObjectByKey($Conn,$_GET['Id']);
     <div>Message : <?php echo $employeeInbox->Message; ?></div>
     <div><a href="<?php echo $employeeInbox->ViewDetailLink; ?>">View</a></div>
 </div>
-<?php 
-    $employeeInbox->IsRead = 1;
-    $employeeInbox->Update();
-    $Conn->Commit();
-?>
 <?php
     include('footer.php');
 ?>
