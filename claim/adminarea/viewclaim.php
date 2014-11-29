@@ -21,6 +21,7 @@ $ClaimTransaction = ClaimTransaction::GetObjectByKey($Conn, $_GET['Id']);
     <p><b>Rejection Note : </b><?php echo $ClaimTransaction->RejectionNote; ?></p><br>
 </td>
 <td>
+<?php if($ClaimTransaction->Status == 0) { ?>
     <h3>Approval</h3>
     <form method="post" action="processclaimapproval.php" name="frmClaimApproval" id="frmClaimApproval">
         <input type="hidden" name="Id" value="<?php echo $_GET['Id'];?>"/>
@@ -30,6 +31,7 @@ $ClaimTransaction = ClaimTransaction::GetObjectByKey($Conn, $_GET['Id']);
         <textarea name="txtNote"></textarea><br>
         <input type="submit" />
     </form>
+<?php }?>
 </td>
 </tr>
 </table>
