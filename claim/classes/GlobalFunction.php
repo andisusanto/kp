@@ -29,5 +29,10 @@ class GlobalFunction{
         $allowed = array('png','jpg','gif','jpeg','bmp');
         return in_array($extension,$allowed);
     }
+    
+    public static function getIndonesianMoneyString($number)
+    {
+        return "Rp. ".number_format ($number,2,",",".");
+    }
 }
 ?>

@@ -8,7 +8,7 @@
     include_once('../classes/ClaimType.php');
     include_once('../classes/Connection.php');
     $Conn = Connection::get_DefaultConnection();
-    $claimTransactions = ClaimTransaction::LoadCollection($Conn,'1=1','ClaimDate DESC');
+    $claimTransactions = ClaimTransaction::LoadCollection($Conn,'Status <> 0','ClaimDate DESC');
 ?><div class="view_data">
 <table id="datatable" class="display">
     <thead>

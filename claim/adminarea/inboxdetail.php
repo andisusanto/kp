@@ -8,9 +8,10 @@ $Conn = Connection::get_DefaultConnection();
 $adminInbox = AdminInbox::GetObjectByKey($Conn,$_GET['Id']);
 ?>
 <div class="view_data">
-    <div>Subject : <?php echo $adminInbox->Subject; ?></div>
-    <div>Message : <?php echo $adminInbox->Message; ?></div>
-    <div><a href="<?php echo $adminInbox->ViewDetailLink; ?>">View</a></div>
+<h3><?php echo $adminInbox->Subject; ?></h3>
+    <p><div><b>Received Date : </b><?php echo date('Y-M-d',$adminInbox->ReceivedDate); ?></div></p>
+    <p><div><b>Message : </b><?php echo $adminInbox->Message; ?></div></p>
+    <div><a href="<?php echo $adminInbox->ViewDetailLink; ?>">Open</a></div>
 </div>
 <?php
     include('footer.php');

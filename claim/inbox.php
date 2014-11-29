@@ -9,6 +9,7 @@ $Conn = Connection::get_DefaultConnection();
 $employeeInboxs = EmployeeInbox::LoadCollection($Conn,'Employee = '.$_SESSION['CurrentEmployeeId'],'ReceivedDate DESC');
 ?>
 <div class="view_data">
+<h3>Inbox</h3>
 <table id="datatable" class="display">
     <thead>
         <tr>

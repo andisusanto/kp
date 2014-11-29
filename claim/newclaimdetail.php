@@ -7,35 +7,12 @@
     include_once('classes/Connection.php');
     $Conn = Connection::get_DefaultConnection();
 ?>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home</title>
-  
-    <link rel="stylesheet" type="text/css" href="css/weefer_claim.css">
-    <link type="text/css" rel="stylesheet" href="jquery/formValidation/css/validationEngine.jquery.css"/>
-    <link type="text/css" rel="stylesheet" href="jquery/jquery-ui-1.11.2/jquery-ui.min.css"/>
-    <script src="jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
-    <script src="jquery/jquery-ui-1.11.2/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="jquery/formValidation/js/jquery.validationEngine.js" type="text/javascript"></script>
-    <script src="jquery/formValidation/js/languages/jquery.validationEngine-en.js" type="text/javascript"></script>
+<?php include('header.php'); ?>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#frmAddClaimTransactionDetail").validationEngine();
         });
     </script>
-  </head>
-  <body>
-    <div class="navigation">
-      <ul>
-          <li><a href="login.php">log in</a></li>
-          <li><a href="newclaim.php">new claim</a></li>
-          <li><a href="myclaimhistory.php">history</a></li> 
-      </ul>
-    </div>
-
 <div class="form_add">
 <form action="processnewclaimdetail.php" method="POST" name="frmAddClaimTransactionDetail" id="frmAddClaimTransactionDetail" enctype="multipart/form-data">
     <input type="hidden" name="ClaimTransaction" value="<?php echo $_GET['Claim'];?>"/>
@@ -56,12 +33,4 @@
 
    <input type="submit" value="save">
 </form>
-</div>
-<script type="text/javascript">
-$(".date").datepicker();
-</script>
-<script type="text/javascript">
-$(".date").datepicker("option","dateFormat","yy-mm-dd");
-</script>
-  </body>
-</html>
+<?php include('footer.php'); ?>

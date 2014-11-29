@@ -1,5 +1,6 @@
 <?php
 include_once('../classes/ClaimTransaction.php');
+include_once('../classes/GlobalFunction.php');
 include_once('../classes/Employee.php');
 include_once('../classes/Travel.php');
 include_once('../classes/ClaimType.php');
@@ -58,7 +59,7 @@ $ClaimTransaction = ClaimTransaction::GetObjectByKey($Conn, $_GET['Id']);
                 <td><?php $ClaimType = ClaimType::GetObjectByKey($Conn,$detail->ClaimType);echo $ClaimType->Name; ?></td>
                 <td><?php echo $detail->Note; ?></td>
                 <td><?php echo date('Y-M-d',$detail->TransDate); ?></td>
-                <td><?php echo $detail->Amount; ?></td>
+                <td><?php echo GlobalFunction::getIndonesianMoneyString($detail->Amount); ?></td>
                 <td>
                     <?php if($ClaimTransaction->Status == 0){?><a href="processdeleteclaimtransactiondetail.php?Id=<?php echo $detail->get_Id(); ?>">Delete</a><?php }?>
                     <a href="viewclaimdetail.php?Id=<?php echo $detail->get_Id();?>">view</a>
