@@ -39,10 +39,10 @@ $ClaimTransaction = ClaimTransaction::GetObjectByKey($Conn, $_GET['Id']);
    
     
     
-<table>
+<table id="datatable">
         <thead>
             <tr>
-                <th>ClaimType</th>
+                <th>Claim Type</th>
                 <th>Note</th>
                 <th>TransDate</th>
                 <th>Amount</th>

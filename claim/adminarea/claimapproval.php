@@ -10,6 +10,7 @@
     $Conn = Connection::get_DefaultConnection();
     $claimTransactions = ClaimTransaction::LoadCollection($Conn,'Status <> 0','ClaimDate DESC');
 ?><div class="view_data">
+<h3>Approval list</h3>
 <table id="datatable" class="display">
     <thead>
         <tr>
