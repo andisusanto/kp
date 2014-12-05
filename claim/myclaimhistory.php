@@ -42,7 +42,17 @@
                       <?php if($claimTransaction->Status ==0){ ?>
                         <a href="processdeleteclaimtransaction.php?Id=<?php echo $Id;?>">delete</a>
                         <a href="submitclaimtransaction.php?Id=<?php echo $Id;?>">submit</a>
-                      <?php }?>
+                      <?php
+                            }
+                            else
+                            {
+                                if($claimTransaction->Status==1){
+                                ?>
+                                    <a href="cancelclaimtransaction.php?Id=<?php echo $Id;?>">cancel</a>
+                                <?php
+                                }
+                            }
+                      ?>
                   </td>
               </tr>
               <?php
