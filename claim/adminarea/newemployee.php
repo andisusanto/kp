@@ -7,6 +7,7 @@ $Conn = Connection::get_DefaultConnection();
 
 ?>
 <div class="view_data">
+   <a class="backlink" href="employee.php?Id=<?php echo $_GET['Id']; ?>">back</a><br/><br/>
 <h3>New Employee</h3>
 <div class="form_add">
     <script type="text/javascript">

@@ -8,6 +8,7 @@ $Conn = Connection::get_DefaultConnection();
 $Admin = Admin::GetObjectByKey($Conn, $_GET['Id']);
 ?>
 <div class="view_data">
+   <a class="backlink" href="viewadmin.php?Id=<?php echo $_GET['Id']; ?>">back</a><br/><br/>
 <h3>Edit Admin</h3>
 <div class="form_add">
     <script type="text/javascript">

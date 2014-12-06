@@ -8,6 +8,7 @@ $Conn = Connection::get_DefaultConnection();
 $Travel = Travel::GetObjectByKey($Conn, $_GET['Id']);
 ?>
 <div class="view_data">
+   <a class="backlink" href="viewtravel.php?Id=<?php echo $_GET['Id']; ?>">back</a><br/><br/>
 <h3>Edit Travel</h3>
 <div class="form_add">
     <script type="text/javascript">

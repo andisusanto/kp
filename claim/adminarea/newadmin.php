@@ -6,6 +6,7 @@ include_once('../classes/Connection.php');
 $Conn = Connection::get_DefaultConnection();
 ?>
 <div class="view_data">
+   <a class="backlink" href="admin.php?Id=<?php echo $_GET['Id']; ?>">back</a><br/><br/>
 <h3>New Admin</h3>
 <div class="form_add">
     <script type="text/javascript">
