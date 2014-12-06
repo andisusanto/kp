@@ -14,6 +14,7 @@
 <?php $title = 'my claim history';?>
 <?php include('header.php');?>
 <div class="view_data">
+<h3>History</h3>
       <table id="datatable" class="display">
         <thead>
             <tr>

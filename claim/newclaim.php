@@ -6,6 +6,7 @@
     });
 </script>
 <div class="form_add">
+<h3>New claim</h3>
 <form action="processnewclaim.php" method="POST" name="frmAddClaimTransaction" id="frmAddClaimTransaction">
     <div>Travel : <br>
         <select name="Travel" class="validate[required]">
