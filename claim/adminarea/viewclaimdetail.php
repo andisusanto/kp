@@ -10,6 +10,7 @@ $ClaimTransactionDetail = ClaimTransactionDetail::GetObjectByKey($Conn, $_GET['I
 <?php include('header.php');?>
 
 <div class="view_data">
+   <a class="backlink" href="viewclaim.php?Id=<?php echo $ClaimTransactionDetail->ClaimTransaction; ?>">back</a><br/><br/>
 
     <p><b>ClaimType : </b><?php $ClaimType = ClaimType::GetObjectByKey($Conn,$ClaimTransactionDetail->ClaimType);echo $ClaimType->Name; ?></p>
     <p><b>Note : </b><?php echo $ClaimTransactionDetail->Note; ?></p>

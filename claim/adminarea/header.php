@@ -35,5 +35,6 @@
           <li><a href="claimapproval.php">claim approval</a></li>
           <?php $count = count(AdminInbox::LoadCollection($Conn,"IsRead = 0"));?>
           <li><a href="inbox.php"><?php echo ($count > 0) ? "<b>inbox(".$count.")</b>" : "inbox" ; ?></a></li>
+          <li><a href="report.php">report</a></li>
       </ul>
     </div>

@@ -10,6 +10,7 @@ $ClaimTransaction = ClaimTransaction::GetObjectByKey($Conn, $_GET['Id']);
 ?>
 <?php include('header.php');?>
 <div class="view_data">
+   <a class="backlink" href="claimapproval.php">back</a><br/><br/>
 <table>
 <tr>
 <td>
