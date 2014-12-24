@@ -26,15 +26,15 @@
       
       <ul>
         <li><a href="index.php"><img src="../asset/images/logo.png"></a></li>
-          <li><a href="logout.php">log out</a></li>
      
-          <li><a href="admin.php">admin</a></li>
-          <li><a href="travel.php">travel</a></li>
-          <li><a href="employee.php">employee</a></li>
-          <li><a href="claimtype.php">claim type</a></li>
-          <li><a href="claimapproval.php">claim approval</a></li>
+          <li><a href="admin.php">Admin</a></li>
+          <li><a href="travel.php">Travel</a></li>
+          <li><a href="employee.php">Employee</a></li>
+          <li><a href="claimtype.php">Claim Type</a></li>
+          <li><a href="claimapproval.php">Claim Approval</a></li>
           <?php $count = count(AdminInbox::LoadCollection($Conn,"IsRead = 0"));?>
           <li><a href="inbox.php"><?php echo ($count > 0) ? "<b>inbox(".$count.")</b>" : "inbox" ; ?></a></li>
-          <li><a href="report.php">report</a></li>
+          <li><a href="report.php">Report</a></li>
+          <li><a href="logout.php">Log Out</a></li>
       </ul>
     </div>
