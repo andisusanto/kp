@@ -12,7 +12,6 @@
         $ClaimTransaction->Employee = $_SESSION['CurrentEmployeeId'];
         $ClaimTransaction->Status = 0;
         $ClaimTransaction->SubmissionNote = $_POST['SubmissionNote'];
-        $ClaimTransaction->ClaimDate = strtotime(date('Y-m-d H:i:s'));
         $ClaimTransaction->Save();
         $Conn->Commit();
         header('location:viewclaim.php?Id='.$ClaimTransaction->get_Id());

@@ -32,7 +32,7 @@
           <li><a href="newclaim.php">New Claim</a></li>
           <li><a href="myclaimhistory.php">History</a></li>
             <?php $count = count(EmployeeInbox::LoadCollection($Conn,"Employee = ".$_SESSION['CurrentEmployeeId']." AND IsRead = 0"));?>
-          <li><a href="inbox.php"><?php echo ($count > 0) ? "<b>inbox(".$count.")</b>" : "Inbox" ; ?></a></li>
+          <li><a href="inbox.php"><?php echo ($count > 0) ? "<b>Inbox(".$count.")</b>" : "Inbox" ; ?></a></li>
           <li><a href="logout.php">Log Out</a></li>
       </ul>
 

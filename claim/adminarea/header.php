@@ -33,7 +33,7 @@
           <li><a href="claimtype.php">Claim Type</a></li>
           <li><a href="claimapproval.php">Claim Approval</a></li>
           <?php $count = count(AdminInbox::LoadCollection($Conn,"IsRead = 0"));?>
-          <li><a href="inbox.php"><?php echo ($count > 0) ? "<b>inbox(".$count.")</b>" : "Inbox" ; ?></a></li>
+          <li><a href="inbox.php"><?php echo ($count > 0) ? "<b>Inbox(".$count.")</b>" : "Inbox" ; ?></a></li>
           <li><a href="report.php">Report</a></li>
           <li><a href="logout.php">Log Out</a></li>
       </ul>

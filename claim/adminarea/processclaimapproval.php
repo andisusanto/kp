@@ -17,12 +17,12 @@
             $claimTransaction->ApprovalNote = $_POST['txtNote'];
             $claimTransaction->Status = ClaimTransaction::STATUS_APPROVED;
             $employeeInbox->Subject = 'approved transaction';
-            $employeeInbox->Message = 'your transaction have been approved, view detail for more information!';
+            $employeeInbox->Message = 'your transaction at '.date('Y-M-d',$claimTransaction->ClaimDate).' has been approved, click open for more information!';
         }elseif($_POST['action']==3){
             $claimTransaction->RejectionNote = $_POST['txtNote'];
             $claimTransaction->Status = ClaimTransaction::STATUS_REJECTED;
             $employeeInbox->Subject = 'rejected transaction';
-            $employeeInbox->Message = 'your transaction have been rejected, view detail for more information!';
+            $employeeInbox->Message = 'your transaction at '.date('Y-M-d',$claimTransaction->ClaimDate).' has been rejected, click open for more information!';
         }
         $claimTransaction->ProcessedDate = strtotime(date('Y-m-d H:i:s'));
         $employeeInbox->ViewDetailLink = 'viewclaim.php?Id='.$claimTransaction->get_Id();

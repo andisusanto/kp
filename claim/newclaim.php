@@ -22,7 +22,7 @@
     </div>
     <div>Submission Note : <br><textarea class="validate[required]" style="width:50%;" name="SubmissionNote"></textarea></div>
 
-   <input type="submit" value="save">
+   <input type="submit" value="Save">
 </form>
 </div>
 <?php include('footer.php');?>
