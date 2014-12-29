@@ -26,6 +26,6 @@ else
 echo "No Attachment";
 }
 ?><br>
-    <a href="viewclaim.php?Id=<?php echo $ClaimTransactionDetail->ClaimTransaction;?>">back</a>
+    <a href="viewclaim.php?Id=<?php echo $ClaimTransactionDetail->ClaimTransaction;?>">Back</a>
 </div>
 <?php include('footer.php');?>

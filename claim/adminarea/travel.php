@@ -3,7 +3,7 @@
 ?>
 <div class="view_data">
 <h3>List of travel</h3>
-<a href="newtravel.php">add new</a>
+<a href="newtravel.php">Add New</a>
 
 <table id="datatable" class="display">
    <thead>
@@ -32,8 +32,8 @@
 
                <td>
                    <div>
-                       <a href="viewtravel.php?Id=<?php echo $Travel->get_Id(); ?>">view</a>
-                       <a href="processdeletetravel.php?Id=<?php echo $Travel->get_Id(); ?>">delete</a>
+                       <a href="viewtravel.php?Id=<?php echo $Travel->get_Id(); ?>">View</a>
+                       <a href="processdeletetravel.php?Id=<?php echo $Travel->get_Id(); ?>">Delete</a>
                    </div>
                </td>
        </tr>

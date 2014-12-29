@@ -2,7 +2,7 @@
     include('header.php');
 ?><div class="view_data">
 <h3>List of employee</h3>
-<a href="newemployee.php">add new</a>
+<a href="newemployee.php">Add New</a>
 
 <table id="datatable" class="display">
    <thead>
@@ -33,8 +33,8 @@
 
                <td>
                    <div>
-                       <a href="viewemployee.php?Id=<?php echo $Employee->get_Id(); ?>">view</a>
-                       <a href="processdeleteemployee.php?Id=<?php echo $Employee->get_Id(); ?>">delete</a>
+                       <a href="viewemployee.php?Id=<?php echo $Employee->get_Id(); ?>">View</a>
+                       <a href="processdeleteemployee.php?Id=<?php echo $Employee->get_Id(); ?>">Delete</a>
                    </div>
                </td>
        </tr>

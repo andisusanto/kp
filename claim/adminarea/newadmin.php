@@ -6,7 +6,7 @@ include_once('../classes/Connection.php');
 $Conn = Connection::get_DefaultConnection();
 ?>
 <div class="view_data">
-   <a class="backlink" href="admin.php?Id=<?php echo $_GET['Id']; ?>">back</a><br/><br/>
+   <a class="backlink" href="admin.php?Id=<?php echo $_GET['Id']; ?>">Back</a><br/><br/>
 <h3>New Admin</h3>
 <div class="form_add">
     <script type="text/javascript">
@@ -19,7 +19,7 @@ $Conn = Connection::get_DefaultConnection();
     <div>Password : <br><input class="validate[required]" type="password" name="Password">    </div>
     <div>IsActive : <br><input type="checkbox" name="IsActive">    </div>
 
-   <input type="submit" value="save">
+   <input type="submit" value="Save">
 </form>
 </div>
 </div>

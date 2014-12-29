@@ -36,7 +36,7 @@
   </head>
   <body>
     <div class="form_login">
-      <div class="title"><img alt="logo" src="../asset/images/logo.png"> Employee Claim Portal</div>
+      <div class="title"><img alt="logo" src="../asset/images/logo.png"> Admin Area</div>
       <form method="post" action="processlogin.php" id="frmLogIn">
           <p>User Name :<br>
           <input type="text" name="txtUserName" class="validate[required]" placeholder="UserName"/></p>

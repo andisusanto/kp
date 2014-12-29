@@ -8,7 +8,7 @@ $Conn = Connection::get_DefaultConnection();
 $ClaimType = ClaimType::GetObjectByKey($Conn, $_GET['Id']);
 ?>
 <div class="view_data">
-   <a class="backlink" href="viewclaimtype.php?Id=<?php echo $_GET['Id']; ?>">back</a><br/><br/>
+   <a class="backlink" href="viewclaimtype.php?Id=<?php echo $_GET['Id']; ?>">Back</a><br/><br/>
 <h3>Edit Claim Type</h3>
 <div class="form_add">
     <script type="text/javascript">
@@ -22,7 +22,7 @@ $ClaimType = ClaimType::GetObjectByKey($Conn, $_GET['Id']);
     <div>Name : <br><input class="validate[required]" type="text" name="Name" value="<?php echo $ClaimType->Name; ?>" ></div>
     <div>Is Active : <br><input type="checkbox" name="IsActive"  <?php if($ClaimType->IsActive){echo "Checked";}else{echo "";} ?>></div>
 
-   <input type="submit" value="save">
+   <input type="submit" value="Save">
 </form>
 </div>
 </div>

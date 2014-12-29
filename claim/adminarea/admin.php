@@ -3,7 +3,7 @@
 ?>
 <div class="view_data">
 <h3>List of admin</h3>
-<a href="newadmin.php">add new</a>
+<a href="newadmin.php">Add New</a>
 <table id="datatable" class="display">
    <thead>
        <tr>
@@ -25,8 +25,8 @@
                 <td><?php echo Helper::getBooleanTextValue($Admin->IsActive); ?></td>
                <td>
                    <div>
-                       <a href="viewadmin.php?Id=<?php echo $Admin->get_Id(); ?>">view</a>
-                       <a href="processdeleteadmin.php?Id=<?php echo $Admin->get_Id(); ?>">delete</a>
+                       <a href="viewadmin.php?Id=<?php echo $Admin->get_Id(); ?>">View</a>
+                       <a href="processdeleteadmin.php?Id=<?php echo $Admin->get_Id(); ?>">Delete</a>
                    </div>
                </td>
        </tr>

@@ -39,17 +39,17 @@
                   <td><?php echo $claimTransaction->SubmissionNote;?></td>
                   <td><?php echo $claimTransaction->ApprovalNote;?></td>
                   <td><?php echo $claimTransaction->RejectionNote;?></td>
-                  <td><a href="viewclaim.php?Id=<?php echo $Id;?>">view</a>
+                  <td><a href="viewclaim.php?Id=<?php echo $Id;?>">View</a>
                       <?php if($claimTransaction->Status ==0){ ?>
-                        <a href="processdeleteclaimtransaction.php?Id=<?php echo $Id;?>">delete</a>
-                        <a href="submitclaimtransaction.php?Id=<?php echo $Id;?>">submit</a>
+                        <a href="processdeleteclaimtransaction.php?Id=<?php echo $Id;?>">Delete</a>
+                        <a href="submitclaimtransaction.php?Id=<?php echo $Id;?>">Submit</a>
                       <?php
                             }
                             else
                             {
                                 if($claimTransaction->Status==1){
                                 ?>
-                                    <a href="cancelclaimtransaction.php?Id=<?php echo $Id;?>">cancel</a>
+                                    <a href="cancelclaimtransaction.php?Id=<?php echo $Id;?>">Cancel</a>
                                 <?php
                                 }
                             }

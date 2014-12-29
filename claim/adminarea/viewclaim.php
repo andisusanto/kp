@@ -10,7 +10,7 @@ $ClaimTransaction = ClaimTransaction::GetObjectByKey($Conn, $_GET['Id']);
 ?>
 <?php include('header.php');?>
 <div class="view_data">
-   <a class="backlink" href="claimapproval.php">back</a><br/><br/>
+   <a class="backlink" href="claimapproval.php">Back</a><br/><br/>
 <table>
 <tr>
 <td>
@@ -61,7 +61,7 @@ $ClaimTransaction = ClaimTransaction::GetObjectByKey($Conn, $_GET['Id']);
                 <td><?php echo date('Y-M-d',$detail->TransDate); ?></td>
                 <td><?php echo GlobalFunction::getIndonesianMoneyString($detail->Amount); ?></td>
                 <td>
-                    <a href="viewclaimdetail.php?Id=<?php echo $detail->get_Id();?>">view</a>
+                    <a href="viewclaimdetail.php?Id=<?php echo $detail->get_Id();?>">View</a>
                 </td>
             </tr>
             <?php

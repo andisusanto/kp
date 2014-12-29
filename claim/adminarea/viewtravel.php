@@ -12,8 +12,8 @@ $Travel = Travel::GetObjectByKey($Conn, $_GET['Id']);
 <p><b>Start Date : </b><?php echo date('Y-M-d',$Travel->StartDate); ?></p>
 <p><b>Until Date : </b><?php echo date('Y-M-d',$Travel->UntilDate); ?></p>
 <p><b>Closed : </b><?php echo Helper::getBooleanTextValue($Travel->Closed); ?></p>
-<a href="travel.php">back</a>
-<a href="edittravel.php?Id=<?php echo $Travel->get_Id(); ?>">edit</a></div>
+<a href="travel.php">Back</a>
+<a href="edittravel.php?Id=<?php echo $Travel->get_Id(); ?>">Edit</a></div>
 <?php
     include('footer.php');
 ?>

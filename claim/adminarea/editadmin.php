@@ -8,7 +8,7 @@ $Conn = Connection::get_DefaultConnection();
 $Admin = Admin::GetObjectByKey($Conn, $_GET['Id']);
 ?>
 <div class="view_data">
-   <a class="backlink" href="viewadmin.php?Id=<?php echo $_GET['Id']; ?>">back</a><br/><br/>
+   <a class="backlink" href="viewadmin.php?Id=<?php echo $_GET['Id']; ?>">Back</a><br/><br/>
 <h3>Edit Admin</h3>
 <div class="form_add">
     <script type="text/javascript">
@@ -20,7 +20,7 @@ $Admin = Admin::GetObjectByKey($Conn, $_GET['Id']);
    <input type="hidden" name="Id" value="<?php echo $Admin->get_Id();?>">
     <div>User Name : <br><input class="validate[required]" type="text" name="UserName" value="<?php echo $Admin->UserName; ?>" ></div>
     <div>Is Active : <br><input type="checkbox" name="IsActive"  <?php if($Admin->IsActive){echo "Checked";}else{echo "";} ?>></div>
-   <input type="submit" value="save">
+   <input type="submit" value="Save">
 </form>
 </div>
 </div>

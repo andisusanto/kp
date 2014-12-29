@@ -8,7 +8,7 @@ $Conn = Connection::get_DefaultConnection();
 $Employee = Employee::GetObjectByKey($Conn, $_GET['Id']);
 ?>
 <div class="view_data">
-   <a class="backlink" href="viewemployee.php?Id=<?php echo $_GET['Id']; ?>">back</a><br/><br/>
+   <a class="backlink" href="viewemployee.php?Id=<?php echo $_GET['Id']; ?>">Back</a><br/><br/>
 <h3>Edit Employee</h3>
 <div class="form_add">
     <script type="text/javascript">
@@ -25,7 +25,7 @@ $Employee = Employee::GetObjectByKey($Conn, $_GET['Id']);
     <div>Password : <br><input type="password" name="Password">    </div>
     <div>Change Password On Log In : <br><input type="checkbox" name="ChangePasswordOnLogIn"  <?php if($Employee->ChangePasswordOnLogIn){echo "Checked";}else{echo "";} ?>></div>
 
-   <input type="submit" value="save">
+   <input type="submit" value="Save">
 </form>
 </div>
 </div>

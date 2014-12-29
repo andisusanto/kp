@@ -39,8 +39,8 @@ $ClaimTransaction = ClaimTransaction::GetObjectByKey($Conn, $_GET['Id']);
                 <td><?php echo date('Y-M-d',$detail->TransDate); ?></td>
                 <td><?php echo GlobalFunction::getIndonesianMoneyString($detail->Amount); ?></td>
                 <td>
-                    <?php if($ClaimTransaction->Status == 0){?><a href="processdeleteclaimtransactiondetail.php?Id=<?php echo $detail->get_Id(); ?>">delete</a><?php }?>
-                    <a href="viewclaimdetail.php?Id=<?php echo $detail->get_Id();?>">view</a>
+                    <?php if($ClaimTransaction->Status == 0){?><a href="processdeleteclaimtransactiondetail.php?Id=<?php echo $detail->get_Id(); ?>">Delete</a><?php }?>
+                    <a href="viewclaimdetail.php?Id=<?php echo $detail->get_Id();?>">View</a>
                 </td>
             </tr>
             <?php

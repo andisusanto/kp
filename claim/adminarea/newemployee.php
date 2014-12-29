@@ -7,7 +7,7 @@ $Conn = Connection::get_DefaultConnection();
 
 ?>
 <div class="view_data">
-   <a class="backlink" href="employee.php?Id=<?php echo $_GET['Id']; ?>">back</a><br/><br/>
+   <a class="backlink" href="employee.php?Id=<?php echo $_GET['Id']; ?>">Back</a><br/><br/>
 <h3>New Employee</h3>
 <div class="form_add">
     <script type="text/javascript">
@@ -23,7 +23,7 @@ $Conn = Connection::get_DefaultConnection();
     <div>Password : <br><input class="validate[required]" type="password" name="Password">    </div>
     <div>Change Password On Log In : <br><input type="checkbox" name="ChangePasswordOnLogIn">    </div>
 
-   <input type="submit" value="save">
+   <input type="submit" value="Save">
 </form>
 </div>
 </div>

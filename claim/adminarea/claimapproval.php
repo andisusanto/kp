@@ -37,8 +37,8 @@
                         <td><?php echo $claimTransaction->ApprovalNote; ?></td>
                         <td><?php echo $claimTransaction->RejectionNote; ?></td>
                         <td> 
-                            <a href="viewclaim.php?Id=<?php echo $claimTransaction->get_Id(); ?>">view</a>
-                            <a href="cancelclaimapproval.php?Id=<?php echo $claimTransaction->get_Id(); ?>">cancel</a>
+                            <a href="viewclaim.php?Id=<?php echo $claimTransaction->get_Id(); ?>">View</a>
+                            <a href="cancelclaimapproval.php?Id=<?php echo $claimTransaction->get_Id(); ?>">Cancel</a>
                         </td>
                     </tr>
                 <?php

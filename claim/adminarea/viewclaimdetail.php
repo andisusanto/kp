@@ -10,7 +10,7 @@ $ClaimTransactionDetail = ClaimTransactionDetail::GetObjectByKey($Conn, $_GET['I
 <?php include('header.php');?>
 
 <div class="view_data">
-   <a class="backlink" href="viewclaim.php?Id=<?php echo $ClaimTransactionDetail->ClaimTransaction; ?>">back</a><br/><br/>
+   <a class="backlink" href="viewclaim.php?Id=<?php echo $ClaimTransactionDetail->ClaimTransaction; ?>">Back</a><br/><br/>
 
     <p><b>ClaimType : </b><?php $ClaimType = ClaimType::GetObjectByKey($Conn,$ClaimTransactionDetail->ClaimType);echo $ClaimType->Name; ?></p>
     <p><b>Note : </b><?php echo $ClaimTransactionDetail->Note; ?></p>
@@ -21,7 +21,6 @@ $ClaimTransactionDetail = ClaimTransactionDetail::GetObjectByKey($Conn, $_GET['I
 ?>
     <h4>attachment :</h4>
     <img src="../asset/images/claimtransactiondetail/<?php echo $ClaimTransactionDetail->Attachment; ?>" alt="<?php echo $ClaimTransactionDetail->Attachment; ?>" width="300"/>
-<?php }?><br>
-    <a href="viewclaim.php?Id=<?php echo $ClaimTransactionDetail->ClaimTransaction;?>">back</a>
+<?php }?>
 </div>
 <?php include('footer.php');?>

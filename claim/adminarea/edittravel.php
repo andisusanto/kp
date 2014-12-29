@@ -8,7 +8,7 @@ $Conn = Connection::get_DefaultConnection();
 $Travel = Travel::GetObjectByKey($Conn, $_GET['Id']);
 ?>
 <div class="view_data">
-   <a class="backlink" href="viewtravel.php?Id=<?php echo $_GET['Id']; ?>">back</a><br/><br/>
+   <a class="backlink" href="viewtravel.php?Id=<?php echo $_GET['Id']; ?>">Back</a><br/><br/>
 <h3>Edit Travel</h3>
 <div class="form_add">
     <script type="text/javascript">
@@ -23,7 +23,7 @@ $Travel = Travel::GetObjectByKey($Conn, $_GET['Id']);
     <div>Until Date : <br><input type="text" class="date validate[required]" name="UntilDate" value="<?php echo date('Y-m-d',$Travel->UntilDate); ?>" ></div>
     <div>Closed : <br><input type="checkbox" name="Closed"  <?php if($Travel->Closed){echo "Checked";}else{echo "";} ?>></div>
 
-   <input type="submit" value="save">
+   <input type="submit" value="Save">
 </form>
 </div>
 </div>

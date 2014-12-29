@@ -13,8 +13,8 @@ $Employee = Employee::GetObjectByKey($Conn, $_GET['Id']);
 <p><b>User Name : </b><?php echo $Employee->UserName; ?></p>
 <p><b>Is Active : </b><?php echo Helper::getBooleanTextValue($Employee->IsActive); ?></p>
 <p><b>Change Password On Log In : </b><?php echo Helper::getBooleanTextValue($Employee->ChangePasswordOnLogIn); ?></p>
-<a href="employee.php">back</a>
-<a href="editemployee.php?Id=<?php echo $Employee->get_Id(); ?>">edit</a></div>
+<a href="employee.php">Back</a>
+<a href="editemployee.php?Id=<?php echo $Employee->get_Id(); ?>">Edit</a></div>
 <?php
     include('footer.php');
 ?>
