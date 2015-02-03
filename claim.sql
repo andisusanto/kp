@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
   `LockField` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `I_admin_username` (`UserName`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
@@ -42,8 +42,7 @@ CREATE TABLE `admin` (
 
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
 INSERT INTO `admin` (`Id`,`UserName`,`StoredPassword`,`IsActive`,`LockField`) VALUES 
- (25,'testing','202cb962ac59075b964b07152d234b70',1,1),
- (26,'andi','202cb962ac59075b964b07152d234b70',1,0);
+ (27,'jenny','e10adc3949ba59abbe56e057f20f883e',1,0);
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 
 
@@ -61,7 +60,7 @@ CREATE TABLE `admininbox` (
   `LockField` int(10) unsigned DEFAULT NULL,
   `ReceivedDate` datetime NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admininbox`
@@ -69,13 +68,13 @@ CREATE TABLE `admininbox` (
 
 /*!40000 ALTER TABLE `admininbox` DISABLE KEYS */;
 INSERT INTO `admininbox` (`Id`,`Message`,`ViewDetailLink`,`IsRead`,`Subject`,`LockField`,`ReceivedDate`) VALUES 
- (1,'this request need approval. for more information click viewdetail!','viewclaim.php?Id=23',1,'a request need your approval',7,'1970-01-01 01:00:00'),
- (2,'this request need approval. for more information click viewdetail!','viewclaim.php?Id=26',1,'a request need your approval',1,'0000-00-00 00:00:00'),
- (3,'this request need approval. for more information click viewdetail!','viewclaim.php?Id=23',1,'a request need your approval',0,'0000-00-00 00:00:00'),
- (4,'this request need approval. for more information click viewdetail!','viewclaim.php?Id=23',1,'a request need your approval',1,'0000-00-00 00:00:00'),
- (5,'this request need approval. for more information click viewdetail!','viewclaim.php?Id=27',1,'a request need your approval',1,'0000-00-00 00:00:00'),
- (6,'this request need approval. for more information click viewdetail!','viewclaim.php?Id=28',1,'a request need your approval',1,'0000-00-00 00:00:00'),
- (7,'this request need approval. for more information click viewdetail!','viewclaim.php?Id=29',1,'a request need your approval',1,'0000-00-00 00:00:00');
+ (8,'this request need approval. for more information click viewdetail!','viewclaim.php?Id=30',1,'a request need your approval',7,'2014-11-28 08:17:32'),
+ (9,'this request need approval. for more information click viewdetail!','viewclaim.php?Id=32',1,'a request need your approval',1,'2014-12-03 15:30:15'),
+ (10,'this request need approval. for more information click viewdetail!','viewclaim.php?Id=32',1,'a request need your approval',3,'2014-12-03 16:28:56'),
+ (11,'this request need approval. for more information click viewdetail!','viewclaim.php?Id=33',1,'a request need your approval',8,'2014-12-06 18:46:42'),
+ (12,'this request need approval. for more information click viewdetail!','viewclaim.php?Id=34',1,'a request need your approval',2,'2014-12-09 16:07:09'),
+ (13,'a request from Andi Susanto at 1419872179 need approval. for more information click open!','viewclaim.php?Id=37',1,'a request need your approval',1,'2014-12-29 17:56:19'),
+ (14,'a request from Andi Susanto at 2014-12-29 need approval. for more information click open!','viewclaim.php?Id=37',1,'a request need your approval',3,'2014-12-29 17:58:02');
 /*!40000 ALTER TABLE `admininbox` ENABLE KEYS */;
 
 
@@ -100,7 +99,7 @@ CREATE TABLE `claimtransaction` (
   KEY `FK_claimtransaction_employee` (`Employee`),
   CONSTRAINT `FK_claimtransaction_employee` FOREIGN KEY (`Employee`) REFERENCES `employee` (`Id`),
   CONSTRAINT `FK_claimtransaction_travel` FOREIGN KEY (`Travel`) REFERENCES `travel` (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `claimtransaction`
@@ -108,26 +107,13 @@ CREATE TABLE `claimtransaction` (
 
 /*!40000 ALTER TABLE `claimtransaction` DISABLE KEYS */;
 INSERT INTO `claimtransaction` (`Id`,`Employee`,`ClaimDate`,`Travel`,`Status`,`SubmissionNote`,`ApprovalNote`,`RejectionNote`,`LockField`,`ProcessedDate`) VALUES 
- (1,5,'0000-00-00 00:00:00',2,1,'Test',NULL,NULL,5,NULL),
- (7,5,'0000-00-00 00:00:00',2,1,'asads',NULL,NULL,3,NULL),
- (8,5,'0000-00-00 00:00:00',2,1,'21232',NULL,NULL,1,NULL),
- (9,5,'0000-00-00 00:00:00',2,1,'3123',NULL,NULL,1,NULL),
- (12,5,'0000-00-00 00:00:00',2,2,'rear','just submit it',NULL,2,NULL),
- (13,5,'0000-00-00 00:00:00',2,1,'2132',NULL,NULL,1,NULL),
- (14,5,'0000-00-00 00:00:00',2,1,'lalalala',NULL,NULL,1,NULL),
- (15,5,'0000-00-00 00:00:00',2,1,'1232131',NULL,NULL,1,NULL),
- (17,5,'2014-10-01 00:00:00',2,3,'32434',NULL,'asdasd',2,NULL),
- (18,5,'2014-10-01 00:00:00',2,2,'32434','2432432',NULL,2,NULL),
- (19,11,'2014-10-31 00:00:00',3,2,'just testing','Ok, Checked',NULL,2,NULL),
- (20,5,'2014-10-02 00:00:00',3,2,'CLAIM DIN AMA SIAO','Ok, Checked',NULL,4,NULL),
- (21,5,'2014-10-09 00:00:00',2,3,'claim aja',NULL,'itu amount terlalu gede, koq makannya enak x y',4,NULL),
- (22,15,'2014-11-12 00:00:00',2,3,'lalala',NULL,NULL,3,'2014-11-23 16:27:58'),
- (23,5,'2014-11-05 00:00:00',2,2,'12312','Approve this!!',NULL,2,NULL),
- (25,5,'2014-11-06 00:00:00',2,1,'123123',NULL,NULL,1,NULL),
- (26,5,'2014-11-07 00:00:00',2,2,'312312','I Approved this tranasction',NULL,2,NULL),
- (27,5,'2014-11-21 00:00:00',3,3,'2312',NULL,'re',2,NULL),
- (28,5,'2014-11-04 00:00:00',2,2,'312','312312',NULL,2,NULL),
- (29,5,'2014-11-04 00:00:00',2,3,'31',NULL,'rehj',2,NULL);
+ (30,24,'2014-11-28 08:14:22',6,2,'Claim untuk biaya di tanggal 14 November 2014','Ok',NULL,2,'2014-11-28 09:00:45'),
+ (32,24,'2014-12-03 08:56:00',5,3,'Biaya dari tanggal 15 Nov 2014 - 16 Nov 2014',NULL,'tidak ada attachment',4,'2014-12-03 16:30:35'),
+ (33,24,'2014-12-06 06:54:42',5,0,'Biaya dari tanggal 15 Nov 2014 - 16 Nov 2014',NULL,NULL,2,'1970-01-01 01:00:00'),
+ (34,24,'2014-12-09 16:06:44',5,2,'Biaya dari tanggal 15 Nov 2014 - 16 Nov 2014 - Claim ulang,\r\nAttachment tidak diberikan orangnya, kata Pak Robert boleh claim','Ok',NULL,13,'2014-12-23 11:23:37'),
+ (35,24,'2014-12-17 16:19:27',5,0,'Test',NULL,NULL,0,'1970-01-01 01:00:00'),
+ (36,24,'2014-12-24 18:00:22',5,0,'kejadian',NULL,NULL,0,'1970-01-01 01:00:00'),
+ (37,24,'2014-12-29 17:58:02',7,2,'Claim untuk biaya perjalanan',NULL,NULL,6,'2015-01-14 08:44:03');
 /*!40000 ALTER TABLE `claimtransaction` ENABLE KEYS */;
 
 
@@ -150,7 +136,7 @@ CREATE TABLE `claimtransactiondetail` (
   KEY `FK_claimtransactiondetail_claimtransaction` (`ClaimTransaction`),
   CONSTRAINT `FK_claimtransactiondetail_claimtransaction` FOREIGN KEY (`ClaimTransaction`) REFERENCES `claimtransaction` (`Id`),
   CONSTRAINT `FK_claimtransactiondetail_claimtype` FOREIGN KEY (`ClaimType`) REFERENCES `claimtype` (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `claimtransactiondetail`
@@ -158,30 +144,17 @@ CREATE TABLE `claimtransactiondetail` (
 
 /*!40000 ALTER TABLE `claimtransactiondetail` DISABLE KEYS */;
 INSERT INTO `claimtransactiondetail` (`Id`,`ClaimTransaction`,`ClaimType`,`Amount`,`TransDate`,`Note`,`LockField`,`Attachment`) VALUES 
- (2,1,1,'180000.00','2014-04-04 00:00:00','U DO CHI-BYE',0,'77059-berani maju sedikit gue sikatt.jpg'),
- (8,1,2,'9000000.00','2014-05-05 00:00:00','suka hati saya claim',0,'89126-bodo amat.jpg'),
- (12,1,2,'20000.00','2014-05-05 00:00:00','test',0,'2426-bullshit bullshit everywhere.jpg'),
- (13,7,1,'20000.00','2014-04-04 00:00:00','makan siang',0,'47436-bullshit bullshit everywhere.jpg'),
- (14,7,2,'100000.00','2014-05-05 00:00:00','94932841',0,'20755-bisa diam gak kalau masih bacot gua blokir facebook loe.jpg'),
- (18,12,1,'200000.00','2014-04-08 00:00:00','23123',0,'92453-bisa diam gak kalau masih bacot gua blokir facebook loe.jpg'),
- (19,13,1,'2900.00','2014-04-09 00:00:00','90000',0,'35906-Alien 1.bmp'),
- (20,14,2,'400000.00','2014-04-08 00:00:00','testetseetse',0,'92468-Balloon.bmp'),
- (21,15,2,'400000.00','2014-04-08 00:00:00','231231',0,'22964-Da Vinci.bmp'),
- (22,18,2,'2312312.00','2014-04-08 00:00:00','123123123',0,'24435-Earth.bmp'),
- (23,17,1,'123123312312.00','2014-04-08 00:00:00','12312312312',0,'27697-Birthday Cake.bmp'),
- (24,19,1,'20000.00','2014-10-03 00:00:00','makan apa aja',0,'42340-Chocolate Cake.bmp'),
- (25,19,2,'100000.00','2014-10-03 00:00:00','w12123',0,'99618-Beaver.bmp'),
- (26,20,1,'500000.00','2014-10-03 00:00:00','MAKAN LOBSTER',0,'16613-Alien 1.bmp'),
- (27,20,2,'30000.00','2014-10-04 00:00:00','Cuci Kolor',0,'92324-Chocolate Cake.bmp'),
- (28,21,1,'40000.00','2014-04-02 00:00:00','makan steak',0,'95489-Chocolate Cake.bmp'),
- (29,21,2,'30000.00','2014-04-05 00:00:00','Cuci baju batik',0,'25479-Da Vinci.bmp'),
- (30,22,1,'40000.00','2014-11-05 00:00:00','\r\n23',0,'24642-bullshit bullshit everywhere.jpg'),
- (31,25,1,'20000.00','2014-11-05 00:00:00','makan sederhana',0,'33505-Alien 1.bmp'),
- (32,23,1,'10000.00','2014-11-10 00:00:00','12312',0,'88882-Balloon.bmp'),
- (33,26,1,'123123.00','2014-11-04 00:00:00','123123123',0,'38632-Birthday Cake.bmp'),
- (34,27,1,'213123.00','2014-10-02 00:00:00','12312',0,'52822-Da Vinci.bmp'),
- (35,28,2,'12312.00','2014-11-05 00:00:00','21321',0,'85317-Chocolate Cake.bmp'),
- (36,29,1,'3123.00','2014-11-04 00:00:00','312',0,'94558-Birthday Cake.bmp');
+ (37,30,5,'12000.00','2014-11-10 00:00:00','Jalan tol dari bandara ke kantor',0,NULL),
+ (38,30,9,'80000.00','2014-11-10 00:00:00','Taxi bluebird dari bandara ke kantor',0,NULL),
+ (39,30,7,'630000.00','2014-11-10 00:00:00','Tiket pesawat citylink BTM-JKT',0,NULL),
+ (40,30,10,'30000.00','2014-11-10 00:00:00','Biaya sikat gigi dan pasta gigi',0,NULL),
+ (41,32,3,'32000.00','2014-11-04 00:00:00','cuci baju 3kg',0,NULL),
+ (42,33,3,'30000.00','2014-11-05 00:00:00','cuci pakaian 3kg',0,NULL),
+ (43,34,3,'32000.00','2014-11-04 00:00:00','cuci baju 3kg',0,NULL),
+ (44,37,7,'600000.00','2014-12-26 00:00:00','Tiket pesawat citylink',0,NULL),
+ (45,37,9,'90000.00','2014-12-26 00:00:00','Taxi ke bandara di Batam',0,NULL),
+ (46,37,9,'100000.00','2014-12-26 00:00:00','Taxi dari bandara ke kantor di Jakarta',0,NULL),
+ (47,37,5,'12000.00','2014-12-26 00:00:00','Masuk Tol',0,NULL);
 /*!40000 ALTER TABLE `claimtransactiondetail` ENABLE KEYS */;
 
 
@@ -198,7 +171,7 @@ CREATE TABLE `claimtype` (
   `LockField` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `i_claimtype_code` (`Code`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `claimtype`
@@ -206,8 +179,15 @@ CREATE TABLE `claimtype` (
 
 /*!40000 ALTER TABLE `claimtype` DISABLE KEYS */;
 INSERT INTO `claimtype` (`Id`,`Code`,`Name`,`IsActive`,`LockField`) VALUES 
- (1,'001','Makan',1,1),
- (2,'002','Laundry',1,1);
+ (3,'001','Laundry',1,0),
+ (4,'002','Bensin',1,0),
+ (5,'003','Jalan Tol',1,0),
+ (6,'004','Makan & Minum',1,0),
+ (7,'005','Tiket Pesawat',1,0),
+ (8,'006','Tiket Kapal',1,0),
+ (9,'007','Taxi',1,0),
+ (10,'008','Alat kebutuhan sehari-hari',1,0),
+ (11,'009','Lain lain',1,0);
 /*!40000 ALTER TABLE `claimtype` ENABLE KEYS */;
 
 
@@ -228,7 +208,7 @@ CREATE TABLE `employee` (
   PRIMARY KEY (`Id`),
   UNIQUE KEY `i_employee_code` (`Code`),
   UNIQUE KEY `i_employee_username` (`UserName`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `employee`
@@ -236,11 +216,23 @@ CREATE TABLE `employee` (
 
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
 INSERT INTO `employee` (`Id`,`Code`,`Name`,`UserName`,`StoredPassword`,`IsActive`,`LockField`,`ChangePasswordOnLogIn`) VALUES 
- (5,'23123','susanto','susanto','caf1a3dfb505ffed0d024130f58c5cfa',1,3,0),
- (10,'123123123123','Antoni','Antoni','caf1a3dfb505ffed0d024130f58c5cfa',1,3,0),
- (11,'231231','Andi','AndiSusanto','caf1a3dfb505ffed0d024130f58c5cfa',1,1,0),
- (15,'123321','123','123','3d186804534370c3c817db0563f0e461',1,1,0),
- (17,'1010','Andi Susanto','andis','202cb962ac59075b964b07152d234b70',1,4,0);
+ (18,'WFR-001','Hery','Hery','202cb962ac59075b964b07152d234b70',1,0,1),
+ (19,'WFR-002','Robert','Robert','202cb962ac59075b964b07152d234b70',1,0,1),
+ (20,'WFR-004','Lerianah','Leri','d41d8cd98f00b204e9800998ecf8427e',1,1,1),
+ (21,'WFR-005','Jenny Lim','Jenny','202cb962ac59075b964b07152d234b70',1,0,1),
+ (22,'WFR-007','Meilindawati','Meilinda','202cb962ac59075b964b07152d234b70',1,0,1),
+ (23,'WFR-010','Hito','Hito','202cb962ac59075b964b07152d234b70',1,0,1),
+ (24,'WFR-012','Andi Susanto','Andi','1d17c271014fcb24b91a01a993d61afb',1,1,0),
+ (25,'WFR-013','Antoni','Antoni','202cb962ac59075b964b07152d234b70',1,0,1),
+ (26,'WFR-018','Hery','Hery_2','202cb962ac59075b964b07152d234b70',1,0,1),
+ (27,'WFR-025','Wilson','Wilson','202cb962ac59075b964b07152d234b70',1,0,1),
+ (28,'WFR-026','Effendy','Effendy','202cb962ac59075b964b07152d234b70',1,0,1),
+ (29,'WFR-027','Louis Sudin','Louis','202cb962ac59075b964b07152d234b70',1,0,1),
+ (31,'WFR-028','Yanto','Yanto','202cb962ac59075b964b07152d234b70',1,0,1),
+ (32,'WFR-029','Anto','Anto','202cb962ac59075b964b07152d234b70',1,0,1),
+ (33,'WFR-030','Waila Fitri Sudharyanto','Waila','202cb962ac59075b964b07152d234b70',1,0,1),
+ (34,'WFR-032','Tomy Agfianto Wijaya','Tomy','202cb962ac59075b964b07152d234b70',1,0,1),
+ (35,'WFR-031','Robin Junior','Robin','202cb962ac59075b964b07152d234b70',1,0,1);
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 
 
@@ -261,7 +253,7 @@ CREATE TABLE `employeeinbox` (
   PRIMARY KEY (`Id`),
   KEY `FK_employeeinbox_employee` (`Employee`),
   CONSTRAINT `FK_employeeinbox_employee` FOREIGN KEY (`Employee`) REFERENCES `employee` (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `employeeinbox`
@@ -269,11 +261,14 @@ CREATE TABLE `employeeinbox` (
 
 /*!40000 ALTER TABLE `employeeinbox` DISABLE KEYS */;
 INSERT INTO `employeeinbox` (`Id`,`Employee`,`Message`,`ViewDetailLink`,`IsRead`,`Subject`,`LockField`,`ReceivedDate`) VALUES 
- (1,5,'your transaction have been approved, view detail for more information!','viewclaim.php?Id=26',1,'approved transaction',8,'1970-01-01 01:00:00'),
- (2,5,'your transaction have been rejected, view detail for more information!','viewclaim.php?Id=27',1,'rejected transaction',2,'1970-01-01 01:00:00'),
- (3,5,'your transaction have been approved, view detail for more information!','viewclaim.php?Id=28',1,'approved transaction',1,'0000-00-00 00:00:00'),
- (4,5,'your transaction have been rejected, view detail for more information!','viewclaim.php?Id=29',1,'rejected transaction',1,'0000-00-00 00:00:00'),
- (5,15,'your transaction have been rejected, view detail for more information!','viewclaim.php?Id=22',0,'rejected transaction',0,'2014-11-23 16:27:58');
+ (6,24,'your transaction have been approved, view detail for more information!','viewclaim.php?Id=30',1,'approved transaction',8,'2014-11-28 09:00:45'),
+ (7,24,'your transaction have been rejected, view detail for more information!','viewclaim.php?Id=32',1,'rejected transaction',1,'2014-12-03 16:30:35'),
+ (8,24,'your transaction have been approved, view detail for more information!','viewclaim.php?Id=34',1,'approved transaction',1,'2014-12-17 17:22:13'),
+ (9,24,'your transaction have been approved, view detail for more information!','viewclaim.php?Id=34',1,'approved transaction',1,'2014-12-17 17:22:26'),
+ (10,24,'your transaction have been approved, view detail for more information!','viewclaim.php?Id=34',1,'approved transaction',1,'2014-12-17 17:22:47'),
+ (11,24,'your transaction have been approved, view detail for more information!','viewclaim.php?Id=34',1,'approved transaction',4,'2014-12-23 11:23:37'),
+ (12,24,'your transaction at 2014-Dec-29 has been approved, click open for more information!','viewclaim.php?Id=37',1,'approved transaction',2,'2014-12-29 18:00:39'),
+ (13,24,'your transaction at 2014-Dec-29 has been approved, click open for more information!','viewclaim.php?Id=37',0,'approved transaction',0,'2015-01-14 08:44:03');
 /*!40000 ALTER TABLE `employeeinbox` ENABLE KEYS */;
 
 
@@ -290,7 +285,7 @@ CREATE TABLE `travel` (
   `LockField` int(10) unsigned DEFAULT NULL,
   `Closed` tinyint(1) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `travel`
@@ -298,9 +293,9 @@ CREATE TABLE `travel` (
 
 /*!40000 ALTER TABLE `travel` DISABLE KEYS */;
 INSERT INTO `travel` (`Id`,`Name`,`StartDate`,`UntilDate`,`LockField`,`Closed`) VALUES 
- (2,'JKT Trip','2014-11-01 00:00:00','2014-11-29 00:00:00',6,0),
- (3,'SG Trip','2014-10-01 00:00:00','2014-11-01 00:00:00',2,0),
- (4,'123','2014-11-07 00:00:00','2014-11-21 00:00:00',0,1);
+ (5,'Pelaksanaan UAT PT Ajinomoto di Mojokerto','2014-11-03 00:00:00','2014-11-07 00:00:00',1,0),
+ (6,'Implementasi ESS PT Ajinomoto di Jakarta','2014-11-10 00:00:00','2014-11-14 00:00:00',0,0),
+ (7,'RMK Support Trip','2014-12-26 00:00:00','2014-12-31 00:00:00',0,0);
 /*!40000 ALTER TABLE `travel` ENABLE KEYS */;
 
 
