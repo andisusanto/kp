@@ -14,7 +14,7 @@
                 include_once('classes/Connection.php');
                 $Conn = Connection::get_DefaultConnection();
                include_once('classes/Travel.php');
-               $Travels = Travel::LoadCollection($Conn);
+               $Travels = Travel::LoadCollection($Conn, 'Closed = 0');
                foreach ($Travels as $Travel) { ?>
                    <option value="<?php echo $Travel->get_Id();?>"> <?php echo $Travel->Name;?></option>
            <?php }?>

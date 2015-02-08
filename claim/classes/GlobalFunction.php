@@ -17,6 +17,7 @@ class GlobalFunction{
 	}
 	
 	public static function getDateQuery($date){
+        if($date==null) return '0000-00-00 00:00:00';
 		return str_replace(' 00:00:00','',date("Y-m-d H:i:s",$date)) ;
 	}
 	

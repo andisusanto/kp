@@ -4,6 +4,15 @@ thead, tfoot
     text-align:center;
 }
 table
-{
-    border:2px solid black;
+{	
+	font: 15px Calibri;
+	margin: 5px auto;
+ 	width: 90%;
+   
 }
+td {
+	padding: 5px 10px;
+	border-bottom: 1px solid black;
+}
+
+.tableheader td, tfoot{ text-align: left; background: #000; color:#FFF;}

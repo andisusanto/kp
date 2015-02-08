@@ -19,6 +19,8 @@
 <?php
     include_once('../classes/Connection.php');
     include_once('../classes/GlobalFunction.php');
+    include_once('../classes/Travel.php');
+    include_once('../classes/Employee.php');
     $Conn = Connection::get_DefaultConnection();
     $orderString = $_POST['Order'] == 1 ? 'Employee, Travel' : 'Travel, Employee';
     $filterEmployee = $_POST['Employee'] > 0 ? "AND Employee = '".$_POST['Employee']."'
@@ -60,7 +62,25 @@
                             <th colspan="6">
                                 <p>
                                     <span style="font-size: 30px; font-weight: bold; text-decoration: underline">Claim Report By Period</span><br />
-                                    <span style="font-size: 18px; font-style: italic;">Period: <?php echo date('d-M-Y',strtotime($_POST['StartDate'])); ?> - <?php echo date('d-M-Y',strtotime($_POST['UntilDate'])); ?></span>
+                                    <span style="font-size: 18px; font-style: italic;">Period: <?php echo date('d-M-Y',strtotime($_POST['StartDate'])); ?> - <?php echo date('d-M-Y',strtotime($_POST['UntilDate'])); ?></span><br />
+                                    <?php
+                                        if($_POST['Travel'] != 0)
+                                        {
+                                            $Travel = Travel::GetObjectByKey($Conn, $_POST['Travel']);
+                                        ?>
+                                            <span style="font-size: 18px; font-style: italic;">Period: <?php echo $Travel->Name; ?></span><br />
+                                        <?php
+                                        }
+                                    ?>
+                                    <?php
+                                        if($_POST['Employee'] != 0)
+                                        {
+                                            $Employee = Employee::GetObjectByKey($Conn, $_POST['Employee']);
+                                        ?>
+                                            <span style="font-size: 18px; font-style: italic;">Period: <?php echo $Employee->Name; ?></span><br />
+                                        <?php
+                                        }
+                                    ?>
                                 </p>    
                             </th>
                         </tr>
