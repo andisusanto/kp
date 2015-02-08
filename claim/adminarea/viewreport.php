@@ -54,18 +54,22 @@
     if ($result = $Conn->query($query)){
             $total = 0.0;
             ?>
-            <table>
+            <table cellspacing="0">
                 <thead>
-                    <tr>
                         <tr>
-                            <td>Employee</td>
-                            <td>Travel</td>
-                            <td>Claim Date</td>
-                            <td>Note</td>
-                            <td>Processed Date</td>
-                            <td>Claim Amount</td>
+                            <th colspan="6"><h3 style="text-decoration: underline">Claim Report By Period</h3></th>
                         </tr>
-                    </tr>
+                        <tr>
+                            <th colspan="6"><h4>Period: <?php echo date('d-M-Y',strtotime($_POST['StartDate'])); ?> - <?php echo date('d-M-Y',strtotime($_POST['UntilDate'])); ?></h4></th>
+                        </tr>
+                        <tr class="tableheader">
+                            <td style="width:10%">Employee</td>
+                            <td style="width:13%">Travel</td>
+                            <td style="width:10%">Claim Date</td>
+                            <td style="width:45%">Note</td>
+                            <td style="width:10%">Processed Date</td>
+                            <td style="width:12%">Claim Amount</td>
+                        </tr>
                 </thead>
                 <tbody>
                 <?php
@@ -81,13 +85,13 @@
                         <td><?php echo $row['ProcessedDate']; ?></td>
                         <td><?php echo GlobalFunction::getIndonesianMoneyString($row['ClaimAmount']); ?></td>
                     </tr>
-                <?
+                <?php
                 }
                 ?>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="5">TOTAL</td>
+                        <td colspan="5">GRAND TOTAL</td>
                         <td><?php echo GlobalFunction::getIndonesianMoneyString($total); ?></td>
                     </tr>
                 </tfoot>
