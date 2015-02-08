@@ -57,11 +57,14 @@
             <table cellspacing="0">
                 <thead>
                         <tr>
-                            <th colspan="6"><h3 style="text-decoration: underline">Claim Report By Period</h3></th>
+                            <th colspan="6">
+                                <p>
+                                    <span style="font-size: 30px; font-weight: bold; text-decoration: underline">Claim Report By Period</span><br />
+                                    <span style="font-size: 18px; font-style: italic;">Period: <?php echo date('d-M-Y',strtotime($_POST['StartDate'])); ?> - <?php echo date('d-M-Y',strtotime($_POST['UntilDate'])); ?></span>
+                                </p>    
+                            </th>
                         </tr>
-                        <tr>
-                            <th colspan="6"><h4>Period: <?php echo date('d-M-Y',strtotime($_POST['StartDate'])); ?> - <?php echo date('d-M-Y',strtotime($_POST['UntilDate'])); ?></h4></th>
-                        </tr>
+                      
                         <tr class="tableheader">
                             <td style="width:10%">Employee</td>
                             <td style="width:13%">Travel</td>
