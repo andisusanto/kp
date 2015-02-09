@@ -29,8 +29,10 @@
      
           <li><a href="admin.php">Admin</a></li>
           <li><a href="travel.php">Travel</a></li>
+          <li><a href="grade.php">Grade</a></li>
           <li><a href="employee.php">Employee</a></li>
           <li><a href="claimtype.php">Claim Type</a></li>
+          <li><a href="claimrule.php">Claim Rule</a></li>
           <li><a href="claimapproval.php">Claim Approval</a></li>
           <?php $count = count(AdminInbox::LoadCollection($Conn,"IsRead = 0"));?>
           <li><a href="inbox.php"><?php echo ($count > 0) ? "<b>Inbox(".$count.")</b>" : "Inbox" ; ?></a></li>

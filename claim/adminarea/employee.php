@@ -9,6 +9,7 @@
        <tr>
             <th>Code</th>
             <th>Name</th>
+            <th>Grade</th>
             <th>User Name</th>
             <th>Is Active</th>
             <th>Change Password On Log In</th>
@@ -20,6 +21,7 @@
        <?php
            include_once('../classes/Helper.php');
            include_once('../classes/Employee.php');
+           include_once('../classes/Grade.php');
            include_once('../classes/Connection.php');
            $Conn = Connection::get_DefaultConnection();
            $Employees = Employee::LoadCollection($Conn, '1=1', 'Id ASC');
@@ -27,6 +29,7 @@
        <tr>
                 <td><?php echo $Employee->Code; ?></td>
                 <td><?php echo $Employee->Name; ?></td>
+                <td><?php $Grade = Grade::GetObjectByKey($Conn,$Employee->Grade);  echo $Grade->Name; ?></td>
                 <td><?php echo $Employee->UserName; ?></td>
                 <td><?php echo Helper::getBooleanTextValue($Employee->IsActive); ?></td>
                 <td><?php echo Helper::getBooleanTextValue($Employee->ChangePasswordOnLogIn); ?></td>

@@ -11,6 +11,7 @@ try {
     $Employee->Code = $_POST['Code'];
     $Employee->UserName = $_POST['UserName'];
     $Employee->Name = $_POST['Name'];
+    $Employee->Grade = $_POST['Grade'];
     $Employee->ChangePasswordOnLogIn = ($_POST['ChangePasswordOnLogIn'] == 'on') ? 1 : 0;
     if(isset($_POST['Password'])){$Employee->SetPassword($_POST['Password']);}
    $Employee->Update();

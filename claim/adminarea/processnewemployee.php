@@ -12,6 +12,7 @@ $Employee->IsActive = ($_POST['IsActive'] == 'on') ? 1 : 0;
 $Employee->Code = $_POST['Code'];
 $Employee->UserName = $_POST['UserName'];
 $Employee->Name = $_POST['Name'];
+$Employee->Grade = $_POST['Grade'];
 $Employee->ChangePasswordOnLogIn = ($_POST['ChangePasswordOnLogIn'] == 'on') ? 1 : 0;
 
    $Employee->Save();

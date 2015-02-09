@@ -3,6 +3,7 @@
 ?>
 <?php
 include_once('../classes/Employee.php');
+include_once('../classes/Grade.php');
 include_once('../classes/Helper.php');
 include_once('../classes/Connection.php');
 $Conn = Connection::get_DefaultConnection();
@@ -10,6 +11,7 @@ $Employee = Employee::GetObjectByKey($Conn, $_GET['Id']);
 ?><div class="view_data">
 <p><b>Code : </b><?php echo $Employee->Code; ?></p>
 <p><b>Name : </b><?php echo $Employee->Name; ?></p>
+<p><b>Grade : </b><?php $Grade = Grade::GetObjectByKey($Conn,$Employee->Grade); echo $Grade->Name; ?></p>
 <p><b>User Name : </b><?php echo $Employee->UserName; ?></p>
 <p><b>Is Active : </b><?php echo Helper::getBooleanTextValue($Employee->IsActive); ?></p>
 <p><b>Change Password On Log In : </b><?php echo Helper::getBooleanTextValue($Employee->ChangePasswordOnLogIn); ?></p>

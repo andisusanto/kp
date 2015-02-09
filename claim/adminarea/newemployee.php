@@ -18,6 +18,21 @@ $Conn = Connection::get_DefaultConnection();
 <form action="processnewemployee.php" method="POST" name="frmAddEmployee" id="frmAddEmployee">
     <div>Code : <br><input class="validate[required]" type="text" name="Code">    </div>
     <div>Name : <br><input class="validate[required]" type="text" name="Name">    </div>
+    <div>Grade : <br>
+    <select class="validate[required]" name="Grade">
+       <?php
+           include_once('../classes/Grade.php');
+           $Grades = Grade::LoadCollection($Conn);
+           foreach ($Grades as $Grade)
+           {
+           ?>
+               <option value=" <?php echo $Grade->get_Id();?>"> <?php echo $Grade->Name;?></option>
+           <?php
+           }
+           ?>
+       ?>
+       </select>
+    </div>
     <div>Is Active : <br><input type="checkbox" name="IsActive">    </div>
     <div>User Name : <br><input class="validate[required]" type="text" name="UserName">    </div>
     <div>Password : <br><input class="validate[required]" type="password" name="Password">    </div>

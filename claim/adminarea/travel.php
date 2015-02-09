@@ -34,6 +34,20 @@
                    <div>
                        <a href="viewtravel.php?Id=<?php echo $Travel->get_Id(); ?>">View</a>
                        <a href="processdeletetravel.php?Id=<?php echo $Travel->get_Id(); ?>">Delete</a>
+                       <?php
+                       if($Travel->Closed)
+                       {
+                            ?>
+                                <a href="processsettravelasopen.php?Id=<?php echo $Travel->get_Id(); ?>">Set as Open</a>
+                            <?php
+                       }
+                       else
+                       {
+                            ?>
+                                <a href="processsettravelasclose.php?Id=<?php echo $Travel->get_Id(); ?>">Set as Closed</a>
+                            <?php
+                       }
+                       ?>
                    </div>
                </td>
        </tr>
