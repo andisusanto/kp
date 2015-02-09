@@ -22,7 +22,7 @@
            include_once('../classes/Travel.php');
            include_once('../classes/Connection.php');
            $Conn = Connection::get_DefaultConnection();
-           $Travels = Travel::LoadCollection($Conn);
+           $Travels = Travel::LoadCollection($Conn, '1=1', 'StartDate DESC');
            foreach($Travels as $Travel){ ?>
        <tr>
                 <td><?php echo $Travel->Name; ?></td>

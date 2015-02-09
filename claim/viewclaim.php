@@ -16,7 +16,7 @@ $ClaimTransaction = ClaimTransaction::GetObjectByKey($Conn, $_GET['Id']);
     <p><div><b>Submission Note : </b><?php echo $ClaimTransaction->SubmissionNote; ?></div></p>
     <p><div><b>Approval Note : </b><?php echo $ClaimTransaction->ApprovalNote; ?></div></p>
     <p><div><b>Rejection Note : </b><?php echo $ClaimTransaction->RejectionNote; ?></div></p>
-    <p><div><b>Claim Date : </b><?php if($ClaimTransaction->ClaimDate) echo date('Y-M-d',$ClaimTransaction->ClaimDate); ?></div></p>
+    <p><div><b>Claim Date : </b><?php if($ClaimTransaction->ClaimDate != strtotime('0000-00-00 00:00:00')) echo date('Y-M-d',$ClaimTransaction->ClaimDate); ?></div></p>
     <?php if($ClaimTransaction->Status == 0){?><a href="newclaimdetail.php?Claim=<?php echo  $ClaimTransaction->get_Id();?>">new detail</a><a href="submitclaimtransaction.php?Id=<?php echo $ClaimTransaction->get_Id();?>">submit</a><?php } ?>
 <table id="datatable" class="display">
         <thead>

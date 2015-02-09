@@ -1,6 +1,6 @@
 <?php
 class Connection{
-	const DBNAME = 'claim';
+	const DBNAME = 'kpandi';
 	const HOST = 'localhost';
 	const USERNAME = 'root';
 	const PASSWORD = '';

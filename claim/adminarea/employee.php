@@ -22,7 +22,7 @@
            include_once('../classes/Employee.php');
            include_once('../classes/Connection.php');
            $Conn = Connection::get_DefaultConnection();
-           $Employees = Employee::LoadCollection($Conn);
+           $Employees = Employee::LoadCollection($Conn, '1=1', 'Id ASC');
            foreach($Employees as $Employee){ ?>
        <tr>
                 <td><?php echo $Employee->Code; ?></td>
