@@ -7,7 +7,7 @@ $Conn = Connection::get_DefaultConnection();
 $ClaimTransactionDetail = ClaimTransactionDetail::GetObjectByKey($Conn, $_GET['Id']);
 ?>
 
-<?php $title = 'view claim detail'; ?>
+<?php $title = 'View Claim Detail'; ?>
 <?php include('header.php');?>
 
 <div class="view_data">

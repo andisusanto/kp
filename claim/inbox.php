@@ -1,4 +1,4 @@
-<?php $title = 'inbox'; ?>
+<?php $title = 'Inbox'; ?>
 <?php
     include('header.php');
 ?>

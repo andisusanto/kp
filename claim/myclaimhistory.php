@@ -11,7 +11,7 @@
     $ClaimTransactions = ClaimTransaction::LoadCollection($Conn,"Employee = ".$employeeId, "ClaimDate DESC");
 ?>
 
-<?php $title = 'my claim history';?>
+<?php $title = 'My Claim History';?>
 <?php include('header.php');?>
 <div class="view_data">
 <h3>History</h3>

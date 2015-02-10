@@ -8,7 +8,7 @@ include_once('classes/Connection.php');
 $Conn = Connection::get_DefaultConnection();
 $ClaimTransaction = ClaimTransaction::GetObjectByKey($Conn, $_GET['Id']);
 ?>
-<?php $title = 'view claim'; ?>
+<?php $title = 'View Claim'; ?>
 <?php include('header.php');?>
 <div class="view_data">
     <p><div><b>Travel : </b><?php $travel = Travel::GetObjectByKey($Conn,$ClaimTransaction->Travel); echo $travel->Name;?></div></p>

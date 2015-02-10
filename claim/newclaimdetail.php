@@ -1,4 +1,4 @@
-<?php $title = 'new claim detail'; ?>
+<?php $title = 'New Claim Detail'; ?>
 <?php
     include_once('checklogin.php');
     include_once('checkchangepassword.php');
@@ -14,7 +14,7 @@
         });
     </script>
    <div class="view_data">
-   <a class="backlink" href="viewclaim.php?Id=<?php echo $_GET['Claim']; ?>">back</a>
+   <a class="backlink" href="viewclaim.php?Id=<?php echo $_GET['Claim']; ?>">Back</a>
    </div>
 <div class="form_add">
 <form action="processnewclaimdetail.php" method="POST" name="frmAddClaimTransactionDetail" id="frmAddClaimTransactionDetail" enctype="multipart/form-data">
@@ -34,6 +34,6 @@
     <div>Note : <br><textarea name="Note" class="validate[required]" ></textarea></div>
     <div>Attachment : <br><input type="file" name="Attachment">    </div>
 
-   <input type="submit" value="save"/>
+   <input type="submit" value="Save"/>
 </form>
 <?php include('footer.php'); ?>

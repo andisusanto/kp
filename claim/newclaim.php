@@ -1,4 +1,4 @@
-<?php $title = 'new claim'; ?>
+<?php $title = 'New Claim'; ?>
 <?php include('header.php'); ?>
 <script type="text/javascript">
     $(document).ready(function () {

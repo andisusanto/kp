@@ -3,7 +3,7 @@
     include_once('checkchangepassword.php');
 ?>
 
-<?php $title = 'home'; ?>
+<?php $title = 'Home'; ?>
 <?php include('header.php');?>
 
 <?php include('footer.php');?>
