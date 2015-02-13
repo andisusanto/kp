@@ -22,7 +22,7 @@
        $ClaimTransaction->ClaimDate = $now;
         $employee = Employee::GetObjectByKey($Conn,$ClaimTransaction->Employee);
         $adminInbox = new AdminInbox($Conn);
-        $adminInbox->Subject = 'a request need your approval';
+        $adminInbox->Subject = $employee->Name." (".date('Y-m-d',$now).")";
         $adminInbox->Message = 'a request from '.$employee->Name.' at '.date('Y-m-d',$now).' need approval. for more information click open!';
         $adminInbox->ViewDetailLink = 'viewclaim.php?Id='.$ClaimTransaction->get_Id();
         $adminInbox->ReceivedDate = $now;

@@ -52,7 +52,7 @@
         $employeeInbox->Save();
         $claimTransaction->Update();
         $Conn->Commit();
-        header('location:claimapproval.php');
+        header('location:viewclaim.php?Id='.$claimTransaction->get_Id());
     } catch (Exception $e) {
        include('../error_handler.php');
     }

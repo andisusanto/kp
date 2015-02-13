@@ -89,12 +89,12 @@
                       
                         <tr class="tableheader">
                             <td style="width:10%">Employee</td>
-                            <td style="width:13%">Travel</td>
+                            <td style="width:10%">Travel</td>
                             <td style="width:10%">Claim Date</td>
-                            <td style="width:45%">Note</td>
+                            <td style="width:40%">Note</td>
                             <td style="width:10%">Processed Date</td>
-                            <td style="width:12%">Claim Amount</td>
-                            <td style="width:12%">Processed Amount</td>
+                            <td style="width:10%">Claim Amount</td>
+                            <td style="width:10%">Processed Amount</td>
                         </tr>
                 </thead>
                 <tbody>
