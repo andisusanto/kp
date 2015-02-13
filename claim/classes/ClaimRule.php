@@ -42,6 +42,29 @@ class ClaimRule extends BaseObject{
            throw new InvalidQueryException;
        }
    }
+   
+   public static function GetObjectByCriteria($mySQLi, $Criteria){
+       if($result = $mySQLi->query("SELECT * FROM ".self::TABLENAME." WHERE {$Criteria} LIMIT 1")){
+           if($row = $result->fetch_array()){
+               $tmpClaimRule = new ClaimRule($mySQLi);
+               $tmpClaimRule->Id = $row['Id'];
+               $tmpClaimRule->MaxAmount = $row['MaxAmount'];
+               $tmpClaimRule->Grade = $row['Grade'];
+               $tmpClaimRule->ClaimType = $row['ClaimType'];
+
+               $tmpClaimRule->LockField = $row['LockField'];
+               return $tmpClaimRule;
+           }
+           else
+           {
+               return false;
+           }
+       }
+       else
+       {
+           throw new InvalidQueryException;
+       }
+   }
    public static function LoadCollection($mySQLi, $Criteria = '1 = 1',$sort='',$page=0,$totalitem=0){
        $tmpQuery = "SELECT  * FROM ".self::TABLENAME." WHERE ".$mySQLi->real_escape_string($Criteria);
        if ($sort != ''){ $tmpQuery .= " "."ORDER BY ".$sort; }

@@ -17,6 +17,7 @@
        <?php
            include_once('../classes/Helper.php');
            include_once('../classes/ClaimRule.php');
+           include_once('../classes/ClaimType.php');
            include_once('../classes/Grade.php');
            include_once('../classes/GlobalFunction.php');
            include_once('../classes/Connection.php');
@@ -24,7 +25,7 @@
            $ClaimRules = ClaimRule::LoadCollection($Conn, '1=1', 'Id ASC');
            foreach($ClaimRules as $ClaimRule){ ?>
        <tr>
-                <td><?php $Employee = Employee::GetObjectByKey($Conn,$ClaimRule->Employee);  echo $Employee->Name; ?></td>
+                <td><?php $ClaimType = ClaimType::GetObjectByKey($Conn,$ClaimRule->ClaimType);  echo $ClaimType->Name; ?></td>
                 <td><?php $Grade = Grade::GetObjectByKey($Conn,$ClaimRule->Grade);  echo $Grade->Name; ?></td>
                 <td><?php echo GlobalFunction::getIndonesianMoneyString($ClaimRule->MaxAmount); ?></td>
 

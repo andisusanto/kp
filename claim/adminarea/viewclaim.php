@@ -18,6 +18,7 @@ $ClaimTransaction = ClaimTransaction::GetObjectByKey($Conn, $_GET['Id']);
     <p><b>Travel : </b><?php $travel = Travel::GetObjectByKey($Conn,$ClaimTransaction->Travel); echo $travel->Name;?></p>
     <p><b>Claim Date : </b><?php echo date('Y-M-d',$ClaimTransaction->ClaimDate); ?></p>
     <p><b>Status : </b><?php echo $ClaimTransaction->getStatusText(); ?></p>
+    <p><div><b>Processed Date : </b><?php if($ClaimTransaction->ProcessedDate != strtotime('0000-00-00 00:00:00')) echo date('Y-M-d',$ClaimTransaction->ProcessedDate); ?></div></p>
     <p><b>Submission Note : </b><?php echo $ClaimTransaction->SubmissionNote; ?></p>
     <p><b>Approval Note : </b><?php echo $ClaimTransaction->ApprovalNote; ?></p>
     <p><b>Rejection Note : </b><?php echo $ClaimTransaction->RejectionNote; ?></p><br>
@@ -46,7 +47,9 @@ $ClaimTransaction = ClaimTransaction::GetObjectByKey($Conn, $_GET['Id']);
                 <th>Claim Type</th>
                 <th>Note</th>
                 <th>TransDate</th>
+                <th>Quantity</th>
                 <th>Amount</th>
+                <th>ProcessedAmount</th>
                 <th>Action</th>
             </tr>
         </thead> 
@@ -59,7 +62,9 @@ $ClaimTransaction = ClaimTransaction::GetObjectByKey($Conn, $_GET['Id']);
                 <td><?php $ClaimType = ClaimType::GetObjectByKey($Conn,$detail->ClaimType);echo $ClaimType->Name; ?></td>
                 <td><?php echo $detail->Note; ?></td>
                 <td><?php echo date('Y-M-d',$detail->TransDate); ?></td>
+                <td><?php echo $detail->Quantity; ?></td>
                 <td><?php echo GlobalFunction::getIndonesianMoneyString($detail->Amount); ?></td>
+                <td><?php echo GlobalFunction::getIndonesianMoneyString($detail->ProcessedAmount); ?></td>
                 <td>
                     <a href="viewclaimdetail.php?Id=<?php echo $detail->get_Id();?>">View</a>
                 </td>

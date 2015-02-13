@@ -31,7 +31,9 @@
         $ClaimTransactionDetail->TransDate = $transDate;
         $ClaimTransactionDetail->Attachment = $fileName;
         $ClaimTransactionDetail->ClaimTransaction = $ClaimTransactionId;
+        $ClaimTransactionDetail->Quantity = $_POST['Quantity'];
         $ClaimTransactionDetail->Amount = $_POST['Amount'];
+        $ClaimTransactionDetail->ProcessedAmount = 0;
         $ClaimTransactionDetail->ClaimType = $_POST['ClaimType'];
 
         $ClaimTransactionDetail->Save();

@@ -30,6 +30,7 @@
            <?php }?>
        </select>
     </div>
+    <div>Quantity : <br><input type="text" name="Quantity" class="validate[required,custom[integer,min[1]]]" >    </div>
     <div>Amount : <br><input type="text" name="Amount" class="validate[required,custom[integer,min[1]]]" >    </div>
     <div>Note : <br><textarea name="Note" class="validate[required]" ></textarea></div>
     <div>Attachment : <br><input type="file" name="Attachment">    </div>

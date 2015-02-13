@@ -8,18 +8,20 @@ class ClaimTransactionDetail extends BaseObject{
        parent::__construct($mySQLi);
    }
     public $Note;
+    public $Quantity;
     public $TransDate;
     public $Attachment;
     public $ClaimTransaction;
     public $Amount;
+    public $ProcessedAmount;
     public $ClaimType;
 
    public function get_SaveQuery(){
        $mySQLi = $this->get_mySQLi();
-       return "INSERT INTO ".self::TABLENAME."(Note,TransDate,Attachment,ClaimTransaction,Amount,ClaimType,LockField) VALUES('".$mySQLi->real_escape_string($this->Note)."','".$mySQLi->real_escape_string(GlobalFunction::getDateQuery($this->TransDate))."','".$mySQLi->real_escape_string($this->Attachment)."','".$mySQLi->real_escape_string($this->ClaimTransaction)."','".$mySQLi->real_escape_string($this->Amount)."','".$mySQLi->real_escape_string($this->ClaimType)."','".$mySQLi->real_escape_string($this->LockField)."')";}
+       return "INSERT INTO ".self::TABLENAME."(Note,Quantity,TransDate,Attachment,ClaimTransaction,Amount,ProcessedAmount,ClaimType,LockField) VALUES('".$mySQLi->real_escape_string($this->Note)."','".$mySQLi->real_escape_string($this->Quantity)."','".$mySQLi->real_escape_string(GlobalFunction::getDateQuery($this->TransDate))."','".$mySQLi->real_escape_string($this->Attachment)."','".$mySQLi->real_escape_string($this->ClaimTransaction)."','".$mySQLi->real_escape_string($this->Amount)."','".$mySQLi->real_escape_string($this->ProcessedAmount)."','".$mySQLi->real_escape_string($this->ClaimType)."','".$mySQLi->real_escape_string($this->LockField)."')";}
    public function get_UpdateQuery(){
        $mySQLi = $this->get_mySQLi();
-       return "UPDATE ".self::TABLENAME." SET Note = '".$mySQLi->real_escape_string($this->Note)."', TransDate = '".$mySQLi->real_escape_string(GlobalFunction::getDateQuery($this->TransDate))."', Attachment = '".$mySQLi->real_escape_string($this->Attachment)."', ClaimTransaction = '".$mySQLi->real_escape_string($this->ClaimTransaction)."', Amount = '".$mySQLi->real_escape_string($this->Amount)."', ClaimType = '".$mySQLi->real_escape_string($this->ClaimType)."', LockField = '".$mySQLi->real_escape_string($this->LockField)."' WHERE Id = '".$mySQLi->real_escape_string($this->Id)."'";}
+       return "UPDATE ".self::TABLENAME." SET Note = '".$mySQLi->real_escape_string($this->Note)."', Quantity = '".$mySQLi->real_escape_string($this->Quantity)."', TransDate = '".$mySQLi->real_escape_string(GlobalFunction::getDateQuery($this->TransDate))."', Attachment = '".$mySQLi->real_escape_string($this->Attachment)."', ClaimTransaction = '".$mySQLi->real_escape_string($this->ClaimTransaction)."', Amount = '".$mySQLi->real_escape_string($this->Amount)."', ProcessedAmount = '".$mySQLi->real_escape_string($this->ProcessedAmount)."', ClaimType = '".$mySQLi->real_escape_string($this->ClaimType)."', LockField = '".$mySQLi->real_escape_string($this->LockField)."' WHERE Id = '".$mySQLi->real_escape_string($this->Id)."'";}
    protected function get_TableName(){
        return self::TABLENAME;
    }
@@ -30,10 +32,12 @@ class ClaimTransactionDetail extends BaseObject{
                $tmpClaimTransactionDetail = new ClaimTransactionDetail($mySQLi);
                $tmpClaimTransactionDetail->Id = $row['Id'];
                $tmpClaimTransactionDetail->Note = $row['Note'];
+               $tmpClaimTransactionDetail->Quantity = $row['Quantity'];
                $tmpClaimTransactionDetail->TransDate = strtotime($row['TransDate']);
                $tmpClaimTransactionDetail->Attachment = $row['Attachment'];
                $tmpClaimTransactionDetail->ClaimTransaction = $row['ClaimTransaction'];
                $tmpClaimTransactionDetail->Amount = $row['Amount'];
+               $tmpClaimTransactionDetail->ProcessedAmount = $row['ProcessedAmount'];
                $tmpClaimTransactionDetail->ClaimType = $row['ClaimType'];
 
                $tmpClaimTransactionDetail->LockField = $row['LockField'];
@@ -63,10 +67,12 @@ class ClaimTransactionDetail extends BaseObject{
                $tmpClaimTransactionDetail->Id = $row['Id'];
                $tmpClaimTransactionDetail->LockField = $row['LockField'];
                $tmpClaimTransactionDetail->Note = $row['Note'];
+               $tmpClaimTransactionDetail->Quantity = $row['Quantity'];
                $tmpClaimTransactionDetail->TransDate = strtotime($row['TransDate']);
                $tmpClaimTransactionDetail->Attachment = $row['Attachment'];
                $tmpClaimTransactionDetail->ClaimTransaction = $row['ClaimTransaction'];
                $tmpClaimTransactionDetail->Amount = $row['Amount'];
+               $tmpClaimTransactionDetail->ProcessedAmount = $row['ProcessedAmount'];
                $tmpClaimTransactionDetail->ClaimType = $row['ClaimType'];
 
                $ClaimTransactionDetails[] = $tmpClaimTransactionDetail;

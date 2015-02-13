@@ -57,6 +57,32 @@ class Employee extends UserBase{
            throw new InvalidQueryException;
        }
    }
+      public static function GetObjectByUserName($mySQLi, $UserName){
+       if($result = $mySQLi->query("SELECT * FROM ".self::TABLENAME." WHERE UserName = '".$mySQLi->real_escape_string($UserName)."' LIMIT 1")){
+           if($row = $result->fetch_array()){
+               $tmpEmployee = new Employee($mySQLi);
+               $tmpEmployee->Id = $row['Id'];
+               $tmpEmployee->StoredPassword = $row['StoredPassword'];
+               $tmpEmployee->IsActive = $row['IsActive'];
+               $tmpEmployee->Grade = $row['Grade'];
+               $tmpEmployee->Code = $row['Code'];
+               $tmpEmployee->UserName = $row['UserName'];
+               $tmpEmployee->Name = $row['Name'];
+               $tmpEmployee->ChangePasswordOnLogIn = $row['ChangePasswordOnLogIn'];
+
+               $tmpEmployee->LockField = $row['LockField'];
+               return $tmpEmployee;
+           }
+           else
+           {
+               return false;
+           }
+       }
+       else
+       {
+           throw new InvalidQueryException;
+       }
+   }
    public static function LoadCollection($mySQLi, $Criteria = '1 = 1',$sort='',$page=0,$totalitem=0){
        $tmpQuery = "SELECT  * FROM ".self::TABLENAME." WHERE ".$mySQLi->real_escape_string($Criteria);
        if ($sort != ''){ $tmpQuery .= " "."ORDER BY ".$sort; }
