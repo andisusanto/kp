@@ -21,6 +21,7 @@
                 <th>Travel</th>
                 <th>Claim Date</th>
                 <th>Status</th>
+                <th>Processed Date</th>
                 <th>Submission Note</th>
                 <th>Approval Note</th>
                 <th>Rejection Note</th>
@@ -36,6 +37,7 @@
                   <td><?php $travel = Travel::GetObjectByKey($Conn,$claimTransaction->Travel); echo $travel->Name;?></td>
                   <td><?php if($claimTransaction->ClaimDate != strtotime('0000-00-00 00:00:00')) echo date('Y-M-d',$claimTransaction->ClaimDate);?></td>
                   <td><?php echo $claimTransaction->getStatusText();?></td>
+                  <td><?php if($claimTransaction->ProcessedDate != strtotime('0000-00-00 00:00:00')) echo date('Y-M-d',$claimTransaction->ProcessedDate);?></td>
                   <td><?php echo $claimTransaction->SubmissionNote;?></td>
                   <td><?php echo $claimTransaction->ApprovalNote;?></td>
                   <td><?php echo $claimTransaction->RejectionNote;?></td>

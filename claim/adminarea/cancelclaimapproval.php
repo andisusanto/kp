@@ -3,6 +3,7 @@
 ?>
 <?php
     include_once('../classes/ClaimTransaction.php');
+    include_once('../classes/ClaimTransactionDetail.php');
     include_once('../classes/Travel.php');
     include_once('../classes/Connection.php');
     $Conn = Connection::get_DefaultConnection();
@@ -14,7 +15,14 @@ try {
     $claimTransaction->ApprovalNote = "";
     $claimTransaction->RejectionNote = "";
     $claimTransaction->Status = ClaimTransaction::STATUS_SUBMITTED;
+    $claimTransaction->ProcessedDate = null;
     $claimTransaction->Update();
+    $details = ClaimTransactionDetail::LoadCollection($Conn, "ClaimTransaction = '{$claimTransaction->get_Id()}'");
+    foreach ($details as $detail)
+    {
+        $detail->ProcessedAmount = 0;
+        $detail->Update();
+    }
     $Conn->Commit();
     header('location:claimapproval.php');
     } catch (Exception $e) {

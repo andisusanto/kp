@@ -34,7 +34,8 @@
 	        ClaimTransaction.SubmissionNote AS Note,
 	        ClaimTransaction.ClaimDate,
 	        ClaimTransaction.ProcessedDate,
-	        SUM(ClaimTransactionDetail.Amount) AS ClaimAmount
+	        SUM(ClaimTransactionDetail.Amount) AS ClaimAmount,
+	        SUM(ClaimTransactionDetail.ProcessedAmount) AS ProcessedAmount
         FROM
 	        `ClaimTransaction`
 	        INNER JOIN `ClaimTransactionDetail` ON ClaimTransactionDetail.ClaimTransaction = ClaimTransaction.Id
@@ -55,6 +56,7 @@
         ".$orderString;
     if ($result = $Conn->query($query)){
             $total = 0.0;
+            $totalProcessed = 0.0;
             ?>
             <table cellspacing="0">
                 <thead>
@@ -92,6 +94,7 @@
                             <td style="width:45%">Note</td>
                             <td style="width:10%">Processed Date</td>
                             <td style="width:12%">Claim Amount</td>
+                            <td style="width:12%">Processed Amount</td>
                         </tr>
                 </thead>
                 <tbody>
@@ -99,6 +102,7 @@
                 while ($row = $result->fetch_array())
                 {
                 $total += $row['ClaimAmount'];
+                $totalProcessed += $row['ProcessedAmount'];
                 ?>
                     <tr>
                         <td><?php echo $row['Employee']; ?></td>
@@ -107,6 +111,7 @@
                         <td><?php echo $row['Note']; ?></td>
                         <td><?php echo $row['ProcessedDate']; ?></td>
                         <td><?php echo GlobalFunction::getIndonesianMoneyString($row['ClaimAmount']); ?></td>
+                        <td><?php echo GlobalFunction::getIndonesianMoneyString($row['ProcessedAmount']); ?></td>
                     </tr>
                 <?php
                 }
@@ -116,6 +121,7 @@
                     <tr>
                         <td colspan="5">GRAND TOTAL</td>
                         <td><?php echo GlobalFunction::getIndonesianMoneyString($total); ?></td>
+                        <td><?php echo GlobalFunction::getIndonesianMoneyString($totalProcessed); ?></td>
                     </tr>
                 </tfoot>
             </table>
