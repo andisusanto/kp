@@ -52,7 +52,7 @@ $ClaimRule = ClaimRule::GetObjectByKey($Conn, $_GET['Id']);
     </div>
     <div>MaxAmount :<br> <input type="text" name="MaxAmount" value="<?php echo $ClaimRule->MaxAmount; ?>" >    </div>
 
-   <input type="submit" value="save">
+   <input type="submit" value="Save">
 </form>
 </div>
 </div>

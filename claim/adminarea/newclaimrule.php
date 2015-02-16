@@ -6,7 +6,7 @@ include_once('../classes/Connection.php');
 $Conn = Connection::get_DefaultConnection();
 ?>
 <div class="view_data">
-   <a class="backlink" href="claimtype.php?Id=<?php echo $_GET['Id']; ?>">Back</a><br/><br/>
+   <a class="backlink" href="claimrule.php">Back</a><br/><br/>
 <h3>New Claim Rule</h3>
 <div class="form_add">
     <script type="text/javascript">

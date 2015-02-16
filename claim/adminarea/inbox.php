@@ -8,7 +8,7 @@ $Conn = Connection::get_DefaultConnection();
 $adminInboxs = AdminInbox::LoadCollection($Conn,'1=1','ReceivedDate DESC');
 ?>
 <div class="view_data">
-<h3>Inbox</h3>
+<h3>Notification</h3>
 <table id="datatable" class="display">
     <thead>
         <tr>

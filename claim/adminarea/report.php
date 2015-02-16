@@ -44,7 +44,7 @@
             <option value="1">Travel Then Employee</option>
        </select>
     </div>
-   <input type="submit" value="view report">
+   <input type="submit" value="View Report">
 </form>
 </div>
 </div>

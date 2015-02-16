@@ -8,6 +8,7 @@ $Conn = Connection::get_DefaultConnection();
 $adminInbox = AdminInbox::GetObjectByKey($Conn,$_GET['Id']);
 ?>
 <div class="view_data">
+<h3>Notification Detail</h3>
    <a class="backlink" href="inbox.php">Back</a><br/><br/>
 <h3><?php echo $adminInbox->Subject; ?></h3>
     <p><div><b>Received Date : </b><?php echo date('Y-M-d',$adminInbox->ReceivedDate); ?></div></p>

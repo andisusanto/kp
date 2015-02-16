@@ -16,6 +16,7 @@ $ClaimTransactionDetail = ClaimTransactionDetail::GetObjectByKey($Conn, $_GET['I
     <p><b>Note : </b><?php echo $ClaimTransactionDetail->Note; ?></p>
     <p><b>TransDate : </b><?php echo date('Y-M-d',$ClaimTransactionDetail->TransDate); ?></p>
     <p><b>Amount : </b><?php echo GlobalFunction::getIndonesianMoneyString($ClaimTransactionDetail->Amount); ?></p>
+    <p><b>Processed Amount : </b><?php echo GlobalFunction::getIndonesianMoneyString($ClaimTransactionDetail->ProcessedAmount); ?></p>
 
 <?php if($ClaimTransactionDetail->Attachment!=NULL) {
 ?>
